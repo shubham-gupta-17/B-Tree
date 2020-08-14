@@ -13,7 +13,7 @@ public class DataPanel extends JPanel implements ActionListener {
 	private JProgressBar progressBar;
 
 	public DataPanel(JTabbedPane tabPane) {
-		tabPane.addTab("Data", this);
+		tabPane.addTab("Data", this);   // add the tab data in tabPane window
 		initComponents();
 	}
 
@@ -33,7 +33,9 @@ public class DataPanel extends JPanel implements ActionListener {
 		btnCreate = new JButton();
 		btnCreate.setFont(new Font("Monospaced", 0, 50)); // NOI18N
 		btnCreate.setText("Create Test Data");
-		btnCreate.addActionListener(this);
+
+		btnCreate.addActionListener(this);  // this is important because after clicking this button our code for generating random data will get called
+
 
 		progressBar = new JProgressBar();
 		progressBar.setStringPainted(true);
@@ -74,9 +76,14 @@ public class DataPanel extends JPanel implements ActionListener {
 
 	}
 
+	// Whenever button is pressed this action will be performed
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		DataPanel obj = this;
+		DataPanel obj = this;   // we are passing this to data manager such that it keep showing the status
+
+	// we  are creating new thread class object, to make an object of thread we need an object which implements a runnable interface
+		// class= thread
+		// runnable = interface
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -89,7 +96,7 @@ public class DataPanel extends JPanel implements ActionListener {
 				}
 			}
 		});
-		t.start();
+		t.start(); // start the thread and run function will start
 	}
 	
 	public void updateStatus(int percent){

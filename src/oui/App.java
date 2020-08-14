@@ -1,12 +1,13 @@
 package oui;
 
 import java.awt.*;
-import javax.swing.*;
+import javax.swing.*;  // Jframe is in swing library
 
 // JFrame is a class of java with which we can make a window
 public class App extends JFrame {
 	// structure of window
-	JTabbedPane tabPane;  // our window will contains tab which are listed below 
+	JTabbedPane tabPane;  // our window will contains tab which are listed below it is used to create tab
+
 	// objects of my windows
 	HomePanel homePanel;
 	DataPanel dataPanel;
@@ -20,7 +21,7 @@ public class App extends JFrame {
 		tabPane.setBackground(Color.DARK_GRAY);
 		tabPane.setForeground(Color.WHITE);
 		
-		homePanel = new HomePanel(tabPane);
+		homePanel = new HomePanel(tabPane);  //we are passing tabpane to all tabs 
 		dataPanel = new DataPanel(tabPane);
 		indexPanel = new IndexPanel(tabPane);
 		queryPanel = new QueryPanel(tabPane);
@@ -35,6 +36,6 @@ public class App extends JFrame {
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);  //this is one of the main property as when you close (x) th program the window and task must closed down
 		                                                   // if this is not done than even on closing our program will keep on running by JVM and machine got hanged JVM is similar to VLC
 		super.setVisible(true);   //means the window must be visible is this is not set to true then window will not show up
-		
+
 	}
 }

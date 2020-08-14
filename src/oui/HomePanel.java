@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class HomePanel extends javax.swing.JPanel {
     public HomePanel(JTabbedPane tabPane) {
-    	tabPane.addTab("Home", this);
+    	tabPane.addTab("Home", this);  // means add a tab with name home  into tabpane window
         initComponents();
     }
 
@@ -14,14 +14,14 @@ public class HomePanel extends javax.swing.JPanel {
     	this.setBorder(BorderFactory.createMatteBorder(25, 25, 25, 25, Color.darkGray));
     	this.setBackground(new Color(0, 100, 0));
     	
-        jTextArea = new JTextArea();
+        jTextArea = new JTextArea();   // area where we want to write 
         jTextArea.setFont(new Font("Monospaced", 0, 35)); // NOI18N
         jTextArea.setForeground(new Color(102, 0, 102));
         jTextArea.setColumns(60);
         jTextArea.setRows(5);
         jTextArea.setText("In this project,I am making a software which will make searching in Relational Database Management system optimized. As well as we will also show better performance of Index seek method over Table scan method.");
         jTextArea.setLineWrap(true);
-        jTextArea.setEditable(false);
+        jTextArea.setEditable(false);  // area must not be editable
         
         javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
